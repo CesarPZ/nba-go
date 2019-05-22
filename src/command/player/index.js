@@ -21,6 +21,14 @@ const player = async (playerName, option) => {
     return result;
   });
 
+  if (option.language) {
+    if (option.language === 'es' || option.language === 'en') {
+      i18n.setLocale(option.langue);
+    } else {
+      catchAPIError('Available languages "es" and "en"', 'NBA.playerInfo()');
+    }
+  }
+
   if (option.compare) {
     let playerDataArr;
 

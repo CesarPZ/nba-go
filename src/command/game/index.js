@@ -62,6 +62,14 @@ const game = async option => {
   let gameBoxScoreData;
   let seasonMetaData;
 
+  if (option.language) {
+    if (option.language === 'es' || option.language === 'en') {
+      i18n.setLocale(option.language);
+    } else {
+      error('Available languages "es" and "en"');
+      process.exit(1);
+    }
+  }
   if (option.date) {
     if (
       R.compose(
