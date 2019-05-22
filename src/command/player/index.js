@@ -8,6 +8,7 @@ import playerInfoCompare from './infoCompare';
 import NBA from '../../utils/nba';
 import catchAPIError from '../../utils/catchAPIError';
 import seasonStatsCompare from './seasonStatsCompare';
+import { i18n } from '../../i18nConfig';
 
 const player = async (playerName, option) => {
   await NBA.updatePlayers();
@@ -132,9 +133,11 @@ const player = async (playerName, option) => {
 
           if (careerTotalsPostSeason.length === 0) {
             console.log(
-              `Sorry, ${_player.firstName} ${
+              `${i18n.__(`Sorry, `)}${_player.firstName} ${
                 _player.lastName
-              } doesn't have any playoffs data ${emoji.get('confused')}`
+              }${i18n.__(`doesn't have any playoffs data `)}${emoji.get(
+                'confused'
+              )}`
             );
           } else {
             commonPlayerInfo[0].nowTeamAbbreviation =

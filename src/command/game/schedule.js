@@ -4,6 +4,7 @@ import { limit } from 'stringz';
 import { center, left, right } from 'wide-align';
 import pMap from 'p-map';
 import ora from 'ora';
+import { i18n } from '../../i18nConfig';
 
 import getBroadcastNetworks from './network';
 import Team from '../Team';
@@ -94,28 +95,29 @@ const getTeamInfo = async (team, seasonId) => {
 
 const chooseGameFromSchedule = async (gamesData, option) => {
   const spinner = ora(
-    `Loading Game Schedule...(0/${gamesData.length})`
+    `${i18n.__(`Loading Game Schedule...`)}0/(${gamesData.length})`
   ).start();
   let networksHeader = '';
 
   if (option.networks) {
-    networksHeader = `${padHomeTeamNetwork('Home')} ${emoji.get(
+    networksHeader = `${padHomeTeamNetwork(i18n.__('Home'))} ${emoji.get(
       'tv'
-    )}  ${padAwayTeamNetwork('Away')}|`;
+    )}  ${padAwayTeamNetwork(i18n.__('Away'))}|`;
   }
 
-  const header = `│ ${padHomeTeamName('Home')}${center(
+  const header = `│ ${padHomeTeamName(i18n.__('Home'))}${center(
     emoji.get('basketball'),
     8
-  )}${padVisitorTeamName('Away')}│${center('Score', 11)}│${padGameStatus(
-    'Status'
-  )}│${networksHeader}`;
+  )}${padVisitorTeamName(i18n.__('Away'))}│${center(
+    i18n.__('Score'),
+    11
+  )}│${padGameStatus(i18n.__('Status'))}│${networksHeader}`;
 
   const tableWidth = !option.networks ? MAX_WIDTH : MAX_WIDTH_WITH_NETWORKS;
   const questions = [
     {
       name: 'game',
-      message: 'Which game do you want to watch?',
+      message: i18n.__('Which game do you want to watch?'),
       type: 'list',
       pageSize: 30,
       choices: [
@@ -135,7 +137,7 @@ const chooseGameFromSchedule = async (gamesData, option) => {
       const homeTeam = await getTeamInfo(home, process.env.season);
       const visitorTeam = await getTeamInfo(visitor, process.env.season);
 
-      spinner.text = `Loading Game Schedule...(${index + 1}/${
+      spinner.text = `${i18n.__(`Loading Game Schedule...`)}(${index + 1}/${
         gamesData.length
       })`;
 

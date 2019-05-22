@@ -4,6 +4,7 @@ import { getMainColor } from 'nba-color';
 
 import { bold } from '../../utils/log';
 import { basicTable } from '../../utils/table';
+import { i18n } from '../../i18nConfig';
 
 const alignCenter = columns =>
   columns.map(content => ({ content, hAlign: 'center', vAlign: 'center' }));
@@ -126,7 +127,7 @@ const seasonStatsCompare = (
 
   const seasonObj = makeSeasonObj(playerProfile, seasonStr);
   const overallArr = makeOverall(playerProfile, seasonStr);
-  const nameStr = makeNameStr(playerInfo, seasonType);
+  const nameStr = makeNameStr(playerInfo, i18n.__(seasonType));
 
   const sorter = (a, b) => {
     const aDate = a.split('-')[0];
@@ -142,9 +143,9 @@ const seasonStatsCompare = (
   ]);
   seasonTable.push(
     alignCenter([
-      bold('SEASON'),
-      bold('TEAM'),
-      bold('AGE'),
+      bold(i18n.__('SEASON')),
+      bold(i18n.__('TEAM')),
+      bold(i18n.__('AGE')),
       bold('GP'),
       bold('MIN'),
       bold('PTS'),
@@ -185,7 +186,7 @@ const seasonStatsCompare = (
   const overallRow = makeRow(overallArr);
   seasonTable.push(
     alignCenter([
-      bold('Overall'),
+      bold(i18n.__('Overall')),
       bold(''),
       bold(''),
       bold(overallRow.gp.trim()),
