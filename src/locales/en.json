@@ -1,5 +1,4 @@
 {
-	"good": "good",
 	"Home": "Home",
 	"Score": "Score",
 	"Which game do you want to watch?": "Which game do you want to watch?",
@@ -14,5 +13,20 @@
 	"AGE": "AGE",
 	"Regular Season": "Regular Season",
 	"Overall": "Overall",
-	"Post Season": "Post Season"
+	"Post Season": "Post Season",
+	"Game Record Leaders": "Game Record Leaders",
+	"Points": "Points",
+	"Assists": "Assists",
+	"Rebounds": "Rebounds",
+	"PLAYER": "PLAYER",
+	"Totals": "Totals",
+	"Loading Game Preview": "Loading Game Preview",
+	"Team": "Team",
+	"Pre Season": "Pre Season",
+	"Loading Game Schedule...": "Loading Game Schedule...",
+	"Can't find any teams that match ": "Can't find any teams that match ",
+	"Sorry, ": "Sorry, ",
+	"doesn't have any playoffs data ": "doesn't have any playoffs data ",
+	"RegularSeason": "RegularSeason",
+	"PostSeason": "PostSeason"
 }
