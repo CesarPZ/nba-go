@@ -6,6 +6,7 @@ import getBroadcastNetworks from './network';
 
 import { bold } from '../../utils/log';
 import { basicTable } from '../../utils/table';
+import { i18n } from '../../i18nConfig';
 
 const alignCenter = columns =>
   columns.map(column => {
@@ -82,7 +83,7 @@ const preview = (
     alignCenter([
       {
         colSpan: 16,
-        content: bold(`${display_year} ${display_season}`),
+        content: bold(`${display_year} ${i18n.__(display_season)}`),
       },
     ]),
     alignCenter([

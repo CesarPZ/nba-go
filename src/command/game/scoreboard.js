@@ -6,6 +6,7 @@ import getBroadcastNetworks from './network';
 
 import { bold, nbaRed, neonGreen } from '../../utils/log';
 import { basicTable } from '../../utils/table';
+import { i18n } from '../../i18nConfig';
 
 const vAlignCenter = columns =>
   columns.map(column => {
@@ -41,7 +42,7 @@ const teamGameLeaders = (homeTeam, visitorTeam, field) =>
     nbaRed(homeTeam.getGameLeaders(field).StatValue),
     {
       colSpan: 2,
-      content: field,
+      content: i18n.__(field),
       hAlign: 'center',
     },
     nbaRed(visitorTeam.getGameLeaders(field).StatValue),
@@ -74,7 +75,7 @@ const scoreboard = (
     vAlignCenter([
       {
         colSpan: 10,
-        content: bold(`${display_year} ${display_season}`),
+        content: bold(`${display_year} ${i18n.__(display_season)}`),
         hAlign: 'center',
       },
     ]),
@@ -105,7 +106,7 @@ const scoreboard = (
         ),
         hAlign: 'left',
       },
-      bold('Team'),
+      bold(i18n.__('Team')),
       bold('Q1'),
       bold('Q2'),
       bold('Q3'),
@@ -241,7 +242,7 @@ const scoreboard = (
     vAlignCenter([
       {
         colSpan: 10,
-        content: bold('Game Record Leaders'),
+        content: bold(i18n.__('Game Record Leaders')),
         hAlign: 'center',
       },
     ]),
