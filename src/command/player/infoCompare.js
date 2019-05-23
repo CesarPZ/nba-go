@@ -5,6 +5,7 @@ import { getMainColor } from 'nba-color';
 import { convertToCm, convertToKg } from '../../utils/convertUnit';
 import { basicTable } from '../../utils/table';
 import { bold } from '../../utils/log';
+import { i18n } from '../../i18nConfig';
 
 const alignCenter = columns =>
   columns.map(content => ({ content, hAlign: 'center', vAlign: 'center' }));
@@ -68,10 +69,10 @@ const infoCompare = playerInfo => {
       },
     ],
     alignCenter([
-      bold('Height'),
-      bold('Weight'),
-      bold('Country'),
-      bold('Born'),
+      bold(i18n.__('Height')),
+      bold(i18n.__('Weight')),
+      bold(i18n.__('Country')),
+      bold(i18n.__('Born')),
       bold('EXP'),
       bold('Draft'),
       bold('PTS'),

@@ -1,5 +1,6 @@
 import { basicTable } from '../../utils/table';
 import { bold, neonGreen, nbaRed } from '../../utils/log';
+import { i18n } from '../../i18nConfig';
 
 const alignCenter = columns =>
   columns.map(content => ({ content, hAlign: 'left', vAlign: 'center' }));
@@ -29,7 +30,7 @@ const createTeamBoxScore = team => {
       },
     ],
     alignCenter([
-      bold('PLAYER'),
+      bold(i18n.__('PLAYER')),
       bold('POS'),
       bold('MIN'),
       bold('FG'),
@@ -114,7 +115,7 @@ const createTeamBoxScore = team => {
 
   boxScoreTable.push(
     alignCenter([
-      'Totals',
+      i18n.__('Totals'),
       '',
       '',
       bold(`${field_goals_made}-${field_goals_attempted}`),

@@ -24,6 +24,7 @@ import { error, bold } from '../../utils/log';
 import { cfontsDate } from '../../utils/cfonts';
 import getBlessed from '../../utils/blessed';
 import catchAPIError from '../../utils/catchAPIError';
+import { i18n } from '../../i18nConfig';
 
 const getGameWithOptionalFilter = async (games, option) => {
   if (option.filter && option.filter.split('=')[0] === 'team') {
@@ -41,7 +42,7 @@ const getGameWithOptionalFilter = async (games, option) => {
     );
 
     if (!potentialGames.length) {
-      error(`Can't find any teams that match ${team}`);
+      error(`${i18n.__(`Can't find any teams that match `)}${team}`);
     } else if (potentialGames.length === 1) {
       const homeTeam = await getTeamInfo(potentialGames[0].home);
       const visitorTeam = await getTeamInfo(potentialGames[0].visitor);
@@ -60,7 +61,16 @@ const game = async option => {
   let gamesData;
   let gameBoxScoreData;
   let seasonMetaData;
+  const languageAvailable = ['es', 'en'];
 
+  if (option.language) {
+    if (languageAvailable.includes(option.language)) {
+      i18n.setLocale(option.language);
+    } else {
+      error(`Available languages: ${languageAvailable}`);
+      process.exit(1);
+    }
+  }
   if (option.date) {
     if (
       R.compose(
@@ -149,7 +159,7 @@ const game = async option => {
       screen.destroy();
       console.log('');
 
-      const spinner = ora('Loading Game Preview').start();
+      const spinner = ora(i18n.__('Loading Game Preview')).start();
 
       let homeTeamDashboardData;
       let visitorTeamDashboardData;
@@ -191,7 +201,11 @@ const game = async option => {
       let updatedGameBoxScoreData;
 
       seasonText.setContent(
-        bold(`${seasonMetaData.display_year} ${seasonMetaData.display_season}`)
+        bold(
+          `${seasonMetaData.display_year} ${i18n.__(
+            seasonMetaData.display_season
+          )}`
+        )
       );
       const { arena, city, state, date, time, broadcasters } = gameBoxScoreData;
 

@@ -31,6 +31,10 @@ program.version(
 program
   .command('player <name>')
   .alias('p')
+  .option(
+    '-l, --language <language>',
+    'Translate to the indicated language "es" or "en"'
+  )
   .option('-i, --info', "Check the player's basic information")
   .option('-r, --regular', "Check the player's career regular season data")
   .option('-p, --playoffs', "Check the player's career playoffs data")
@@ -72,6 +76,7 @@ program
 program
   .command('game')
   .alias('g')
+  .option('-l, --language <language>', 'Translate to the indicated language')
   .option('-d, --date <date>', 'Watch games at specific date')
   .option('-y, --yesterday', "Watch yesterday's games")
   .option('-t, --today', "Watch today's games")

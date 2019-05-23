@@ -9,6 +9,10 @@
 <a target="_blank" href="http://makeapullrequest.com" title="PRs Welcome"><img src="https://img.shields.io/badge/PRs-welcome-brightgreen.svg"></a>
 </p>
 
+##
+[Translation to Spanish](README_es.md)
+##
+
 > The finest NBA CLI.
 
 Watch NBA live play-by-play, game preview, box score and player information on your console.  
@@ -216,6 +220,22 @@ $ nba-go player Curry -i -r -p
 ```
 
 ![player mixed gif](https://user-images.githubusercontent.com/12113222/32416928-5054d48a-c28c-11e7-84d3-bc17681e1a5e.gif)
+
+## Language
+
+To select another language from the console:
+
+##### `-l` or `--language <language>`
+
+```
+$ nba-go game -t -l 'es'
+```
+
+```
+$ nba-go player Curry -i -r -l 'es'
+```
+
+Available languages: es, en.
 
 ## Development
 
