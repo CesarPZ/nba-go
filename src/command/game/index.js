@@ -61,12 +61,13 @@ const game = async option => {
   let gamesData;
   let gameBoxScoreData;
   let seasonMetaData;
+  const languageAvailable = ['es', 'en'];
 
   if (option.language) {
-    if (option.language === 'es' || option.language === 'en') {
+    if (languageAvailable.includes(option.language)) {
       i18n.setLocale(option.language);
     } else {
-      error('Available languages "es" and "en"');
+      error(`Available languages: ${languageAvailable}`);
       process.exit(1);
     }
   }

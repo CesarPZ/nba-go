@@ -21,11 +21,16 @@ const player = async (playerName, option) => {
     return result;
   });
 
+  const languageAvailable = ['es', 'en'];
+
   if (option.language) {
-    if (option.language === 'es' || option.language === 'en') {
+    if (languageAvailable.includes(option.language)) {
       i18n.setLocale(option.language);
     } else {
-      catchAPIError('Available languages "es" and "en"', 'NBA.playerInfo()');
+      catchAPIError(
+        `Available languages: ${languageAvailable}`,
+        'NBA.playerInfo()'
+      );
     }
   }
 
