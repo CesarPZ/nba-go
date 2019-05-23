@@ -9,6 +9,10 @@
 <a target="_blank" href="http://makeapullrequest.com" title="PRs Welcome"><img src="https://img.shields.io/badge/PRs-welcome-brightgreen.svg"></a>
 </p>
 
+##
+[Translation to Spanish](README_es.md)
+##
+
 > The finest NBA CLI.
 
 Watch NBA live play-by-play, game preview, box score and player information on your console.  
