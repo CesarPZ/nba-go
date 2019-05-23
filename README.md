@@ -217,6 +217,22 @@ $ nba-go player Curry -i -r -p
 
 ![player mixed gif](https://user-images.githubusercontent.com/12113222/32416928-5054d48a-c28c-11e7-84d3-bc17681e1a5e.gif)
 
+## Language
+
+To select another language from the console:
+
+##### `-l` or `--language <language>`
+
+```
+$ nba-go game -t -l 'es'
+```
+
+```
+$ nba-go player Curry -i -r -l 'es'
+```
+
+Available languages: es, en.
+
 ## Development
 
 It's simple to run `nba-go` on your local computer.  

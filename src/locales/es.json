@@ -27,5 +27,6 @@
 	"Loading Game Schedule...": "Cargando datos del juego...",
 	"Can't find any teams that match ": "No se puede encontrar ningún equipo que coincida con ",
 	"Sorry, ": "Lo siento, ",
-	"doesn't have any playoffs data ": " no tiene ningún dato de playoffs "
+	"doesn't have any playoffs data ": " no tiene ningún dato de playoffs ",
+	"Playoffs": "Playoffs"
 }

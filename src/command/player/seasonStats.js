@@ -20,7 +20,9 @@ const seasonStats = ({
   const seasonTable = basicTable();
   const playerName = chalk`{bold.white.bgHex('${
     nowTeamMainColor ? nowTeamMainColor.hex : '#000'
-  }') ${nowTeamAbbreviation}} {bold.white #${jersey} ${displayFirstLast} │ ${seasonType}}`;
+  }') ${nowTeamAbbreviation}} {bold.white #${jersey} ${displayFirstLast} │ ${i18n.__(
+    seasonType
+  )}}`;
 
   seasonTable.push([{ colSpan: 14, content: playerName, hAlign: 'center' }]);
   seasonTable.push(

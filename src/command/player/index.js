@@ -23,7 +23,7 @@ const player = async (playerName, option) => {
 
   if (option.language) {
     if (option.language === 'es' || option.language === 'en') {
-      i18n.setLocale(option.langue);
+      i18n.setLocale(option.language);
     } else {
       catchAPIError('Available languages "es" and "en"', 'NBA.playerInfo()');
     }
