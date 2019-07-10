@@ -36,6 +36,7 @@
   "dependencies": {
     "@babel/register": "^7.0.0",
     "async-to-gen": "^1.4.0",
+    "axios": "^0.19.0",
     "blessed": "^0.1.81",
     "cfonts": "^2.4.0",
     "chalk": "^2.4.2",

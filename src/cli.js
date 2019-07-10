@@ -6,7 +6,11 @@ import isAsyncSupported from 'is-async-supported';
 import chalk from 'chalk';
 import updateNotifier from 'update-notifier';
 
-import { player as playerCommand, game as gameCommand } from './command';
+import {
+  player as playerCommand,
+  game as gameCommand,
+  team as teamCommand,
+} from './command';
 import { error, bold, nbaRed, neonGreen } from './utils/log';
 
 import pkg from '../package.json';
@@ -27,6 +31,29 @@ program.version(
   }\n`,
   '-v, --version'
 );
+program
+  .command('team <name>')
+  .alias('t')
+
+  .on('--help', () => {
+    console.log('');
+    console.log("  Get team's basic information, regular season data.");
+    console.log('');
+    console.log('  Example:');
+    console.log(
+      `           ${neonGreen(
+        'nba-go team CHI'
+      )}    => Show team Chicago basic information.`
+    );
+    console.log('');
+    console.log(`  For more detailed information, please check the GitHub page: ${neonGreen(
+      'https://github.com/xxhomey19/nba-go#player'
+    )}
+`);
+  })
+  .action((name, option) => {
+    teamCommand(name, option);
+  });
 
 program
   .command('player <name>')
