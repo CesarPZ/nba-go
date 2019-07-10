@@ -48,10 +48,11 @@ For example:
 
 ## Usage
 
-`nba-go` provides two main commands.
+`nba-go` provides three main commands.
 
 1. [`game` or `g`](#game)
 2. [`player` or `p`](#player)
+3. [`team` or `t`](#team)
 
 ### Game
 
@@ -216,6 +217,21 @@ $ nba-go player Curry -i -r -p
 ```
 
 ![player mixed gif](https://user-images.githubusercontent.com/12113222/32416928-5054d48a-c28c-11e7-84d3-bc17681e1a5e.gif)
+
+### Team
+
+
+#### Options
+
+Get basic information of all seasons of a given team
+
+##### `-t <team>` or `--team <team>`
+
+Get team's basic information year over year
+
+```
+$ nba-go team Spurs
+```
 
 ## Development
 
