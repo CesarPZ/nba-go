@@ -160,6 +160,11 @@ program.on('--help', () => {
       'nba-go player <name>'
     )}`
   );
+  console.log(
+    `  Wanna check the information of all the seasons of a team please enter: ${neonGreen(
+      'nba-go team <name>'
+    )}`
+  );
   console.log('');
   console.log(
     `  For more detailed information please check the GitHub page: ${neonGreen(
